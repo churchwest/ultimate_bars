@@ -1,0 +1,93 @@
+---
+import Counter from '../components/Counter.tsx';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Ultimate Bars - Astro + React</title>
+		<style>
+			:root {
+				--color-bg: #0d1117;
+				--color-text: #c9d1d9;
+				--color-accent: #646cff;
+			}
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-family: system-ui, sans-serif;
+				background: var(--color-bg);
+				color: var(--color-text);
+			}
+			body {
+				padding: 2rem;
+				min-height: 100vh;
+			}
+			main {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			h1 {
+				font-size: 3rem;
+				text-align: center;
+				color: var(--color-accent);
+				margin-bottom: 1rem;
+			}
+			.subtitle {
+				text-align: center;
+				font-size: 1.2rem;
+				color: var(--color-text);
+				margin-bottom: 2rem;
+			}
+			.features {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+				margin: 3rem 0;
+			}
+			.feature {
+				padding: 1.5rem;
+				border: 1px solid #30363d;
+				border-radius: 8px;
+				background: #161b22;
+			}
+			.feature h2 {
+				color: var(--color-accent);
+				margin-bottom: 0.5rem;
+			}
+			.feature p {
+				line-height: 1.6;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Ultimate Bars</h1>
+			<p class="subtitle">A Simple React + Astro Static Web App</p>
+
+			<div class="features">
+				<div class="feature">
+					<h2>🚀 Astro</h2>
+					<p>Built with Astro for optimal performance and static site generation.</p>
+				</div>
+				<div class="feature">
+					<h2>⚛️ React</h2>
+					<p>Interactive components powered by React for dynamic user experiences.</p>
+				</div>
+				<div class="feature">
+					<h2>📦 Static</h2>
+					<p>Generates static HTML files for fast, reliable deployments anywhere.</p>
+				</div>
+			</div>
+
+			<Counter client:load />
+		</main>
+	</body>
+</html>
